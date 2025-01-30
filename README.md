@@ -1,2 +1,5 @@
 # 1er-repositorio
-mi primer repositorio xd
+clase
+'''Python
+print("Hola mundo")
+'''
