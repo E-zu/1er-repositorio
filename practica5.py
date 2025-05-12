@@ -1,60 +1,53 @@
-#Eder Gutierrez Zuñiga
-#05/02/2025
-#Arreglos
+from numpy import array 
+import numpy as np 
 
-#profe la vdd no se si sea la practica de numpy pero es la que se le acerca (⌒_⌒;)
+class ArreglosNP: 
+    
+    def __init__ (self, v):
+        self.arregloNP=np.array(v)
+    def insertarNP (self,v):
+        self.arregloNP=np.insert(self.arregloNP,i,v)
+        print(self.arregloNP)
+    def eliminarNP (self,i):
+        self.arregloNP= np.delete(self.arregloNP,i)
+        print(self.arregloNP)
+    def modificarNP (self,i,w):
+        self.arregloNP[i]=w
+        print(self.arregloNP)
 
-
-from numpy import array
-import numpy as np
-
-
-class Arreglos:
+class Lista: 
     def __init__(self,v):
-        lista =[v]
-        self.arregloNp=np.array(v)
-        self.arregloList = lista[0]
+        self.listi=[]
+    def insertar (self,v):
+        self.listi.append(v)
+        print (self.listi)
+    def eliminar (self,i):
+        self.listi.pop(i)
+        print(self.listi)
+    def modificar (self,i,w):
+        self.listi[i]=w
+        print(self.listi)
 
-    def insertar(self,v):
-        numeros=[1,2,3,4,5,6,7,8,9]
-        valor=int(input("Escribe un valor que se agregara el final de la lista:  "))
-        if valor in numeros:
-            print("El elemento introducido debe de ser numerico")
-        else:
-            self.arregloList.append(valor)
-            self.arregloNp = np.append(self.arregloNp, valor)
-            print("Su nueva lista es:  ",self.arregloList)
-            print("Su nuevo arreglo es:  ",self.arregloNp)
+v=7
+i=0
+w=8
 
-    def modificar(self,v):
-        lugar=int(input("En que posicion quieres que se modifique:  "))
-        index=lugar
-        if 0<= index < len(self.arregloList):
-            nuevoValor=int(input("¿Cual seria EL nuevo valor?  "))
-            self.arregloList[index] = nuevoValor  
-            self.arregloNp[index] = nuevoValor
-            print("Su nueva lista es:  ",self.arregloList)
-            print("Su nuevo arreglo es:  ",self.arregloNp)
-        else:
-            print("Esta fuera del limite")
 
-    def eliminar(self,v):
-        i=int(input("Que lugar quieres eliminar:  "))
-        self.arregloList.pop(i)
-        self.arregloNp = np.delete(self.arregloNp, i) 
-        print("Su nueva lista es:  ",self.arregloList)
-        print("Su nuevo arreglo es:  ",self.arregloNp)
+arreglos= ArreglosNP(v)
 
-v=[1,2,3]
-elArreglo=Arreglos(v)
+arreglos.insertarNP(3)
+arreglos.insertarNP(6)
+arreglos.insertarNP(9)
 
-print("Su lista principal es",v)
-eleccion = int(input("¿Que deseas hacer?  0.-salir 1.-Insertar 2.-Modificar 3.-Eliminar:  "))
-if eleccion == 0:
-    print("Finalizando programa")
-elif eleccion == 1:
-    elArreglo.insertar(v)
-elif eleccion == 2:
-    elArreglo.modificar(v)
-elif eleccion == 3:
-    elArreglo.eliminar(v)    
+arreglos.modificarNP(2,5)
+print("eliminar")
+arreglos.eliminarNP(0)
+
+print("Listas-----------------------")
+listi1= Lista(v)
+listi1.insertar(11)
+listi1.insertar(12)
+listi1.insertar(13)
+listi1.insertar(14)
+listi1.eliminar(1)
+listi1.modificar(1,20)
