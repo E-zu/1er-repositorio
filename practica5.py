@@ -1,6 +1,10 @@
 #Eder Gutierrez Zuñiga
 #05/02/2025
 #Arreglos
+
+#profe la vdd no se si sea la practica de numpy pero es la que se le acerca (⌒_⌒;)
+
+
 from numpy import array
 import numpy as np
 
